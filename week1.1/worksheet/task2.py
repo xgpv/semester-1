@@ -17,8 +17,8 @@ except:
 # Calculate the total amount of money they will have saved by the end of the year (amount per month multiplied by 12).
 # print this out for the user with a suitable message.
 annual_amount = monthly_amount * 12
-print (f"You will save {annual_amount} yearly.")
+print (f"You will save £{annual_amount:.2f} yearly.")
 
 # Calculate the total amount of money including interest (0.8% of the final annual amount) they will have saved in a year.
 # print this out in the format £X.XX (to two decimal places).
-print(f"Including interest, you will save {annual_amount*1.008}")
+print(f"Including interest, you will save £{annual_amount*1.008:.2f}")
