@@ -8,9 +8,9 @@ try:
   num2 = int(input('Input another number: '))
 except:
   print('That is not a number')
-  break()
+  exit()
 # multiply those numbers together
-nummult= num1 * num2
+nummult = num1 * num2
 # print out the result
 print(f'Result is {nummult}.')
 # There is an extra point available for validating that they entered numbers!
