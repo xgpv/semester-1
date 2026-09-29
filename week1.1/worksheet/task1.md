@@ -11,15 +11,15 @@ You can complete this task on the worksheet pdf if you prefer.
 |     Command                 |     Explanation    |
 |-----------------------------|--------------------|
 |     pwd                     | shows the current location of the terminal |
-|     ls                      | |
-|     cd directory_name       | |
-|     cd ..                   | |
-|     cd -                    | |
-|     mkdir directory_name    | |
-|     touch filename          | |
-|     git status              | |
-|     git add -A              | |
-|     git commit -m ""        | |
-|     git push                | |
-|     git pull                | |
+|     ls                      | lists the content of the directory you are currently in |
+|     cd directory_name       | moves to the directory with the given name |
+|     cd ..                   | moves to the directory one level higher than the current |
+|     cd -                    | moves to the most recently previously accessed directory |
+|     mkdir directory_name    | create a new directory in the current place, with a given name |
+|     touch filename          | edits the timestamp of a file or creates a new one if none exist |
+|     git status              | tells you the status of your current directory and how many commits or pushes you have or need to do compared to the forked directory |
+|     git add -A              | saves the current changes in the commit as a checkpoint in this repository |
+|     git commit -m ""        | this permanently saves the changes you made and allows you to write a message detailing the changes |
+|     git push                | uploads the commits not present to the original repository that are present on your local copy |
+|     git pull                | fetches the latest updates from the forked repository and updates your local copy |
 
