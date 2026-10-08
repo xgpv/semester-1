@@ -2,8 +2,8 @@
 #inputs
 import sys
 try:  
-  machine_temp = int(input('What is the temperature of the machine to the nearest degree Celcius?: ')
-  machine_pressure = int(input('What is the pressure of the machine to the nearest PSI?: ')
+  machine_temp = int(input('What is the temperature of the machine to the nearest degree Celcius?: '))
+  machine_pressure = int(input('What is the pressure of the machine to the nearest PSI?: '))
   machine_status = int(input('What is the operational status of the machine, 1/0?: '))
 except ValueError():
   print('Invalid input')
