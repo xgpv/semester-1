@@ -15,6 +15,7 @@ else:
   machine_bool_status = False
 
 #evaluating operating conditions
+safety = True
 if machine_temp > 80:
   print('Machine temperature too high.')
   safety = False
