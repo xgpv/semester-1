@@ -37,7 +37,7 @@ if machine_bool_status:
   if not safety:
     print('The machine is running in unsafe conditions, shut down recommended.')
   else:
-    print('The machine is running normally.'
+    print('The machine is running normally.')
 else:
     print('Machine has stopped, no action needed.')
   
