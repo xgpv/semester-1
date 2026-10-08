@@ -18,7 +18,7 @@ else:
 if machine_temp > 80:
   print('Machine temperature too high.')
   safety = False
-elif 50 =< machine_temp >= 50:
+elif machine_temp >= 50:
   print('Machine temperature is within safe limits.')
 else:
   print('Machine temperature is low, no action needed.')
