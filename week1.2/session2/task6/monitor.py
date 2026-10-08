@@ -26,7 +26,7 @@ else:
 if machine_pressure > 100:
   print('Machine pressure too high.')
   safety = False
-elif 70 =< machine_pressure =< 100:
+elif machine_pressure >= 70:
   print('Machine pressure is stable.')
 else:
   print('Machine pressure is low, operation is normal.')
