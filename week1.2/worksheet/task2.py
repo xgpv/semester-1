@@ -7,7 +7,7 @@ from util import read_numbers
 try:
     numbers = read_numbers()
 except ValueError:
-    sys.exit('Error: no numbers provided')
+    sys.exit('Error: Grade must be an integer between 0 and 100')
 
 numbers = sorted(numbers)
 
