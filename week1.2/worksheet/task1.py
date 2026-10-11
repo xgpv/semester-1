@@ -3,7 +3,7 @@ import sys
 try:  
   grade = int(input('Input the grade achieved, from 0-100: '))
 except ValueError: 
-  sys.exit('Error!')
+  sys.exit('Error: Grade must be an integer between 0 and 100')
 
 if grade > 100 or grade < 0:
     sys.exit('Error!')
