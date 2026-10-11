@@ -7,7 +7,6 @@ except ValueError:
 
 if grade > 100 or grade < 0:
     sys.exit('Error!')
-  45648
 if grade >= 70:
   print(f'{grade} is a Distinction')
 elif grade >=40:
