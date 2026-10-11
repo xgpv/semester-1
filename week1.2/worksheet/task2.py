@@ -14,7 +14,7 @@ if len(numbers) == 0:
 numbers = sorted(numbers)
 
 #Calculating Median
-median = len(numbers) // 2
+median = numbers[len(numbers) // 2]
 if (len(numbers)) % 2 == 0:
     median = (numbers[median] + numbers[median - 1]) / 2
 elif len(numbers) == 1:
@@ -22,4 +22,4 @@ elif len(numbers) == 1:
 
 
 
-print(f'Minimum = {min(numbers)} \nMaximum = {max(numbers)} \nMean = {sum(numbers)/len(numbers)} \nMedian = {numbers[median]}')
+print(f'Minimum = {min(numbers)} \nMaximum = {max(numbers)} \nMean = {sum(numbers)/len(numbers)} \nMedian = {median}')
