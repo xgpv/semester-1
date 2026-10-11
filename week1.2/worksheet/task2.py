@@ -22,4 +22,4 @@ elif len(numbers) == 1:
 
 
 
-print(f'Minimum = {min(numbers)} \nMaximum = {max(numbers)} \nMean = {sum(numbers)/len(numbers)} \nMedian = {median}')
+print(f'Minimum = {min(numbers)} \nMaximum = {max(numbers)} \nMean = {sum(numbers)/len(numbers)} \nMedian = {numbers[median]}')
