@@ -5,6 +5,8 @@ print("To exit the program type quit")
 
 while True:
     user_input = input("Say something: ")
+    if user_input == 'Quit'.lower() or user_input == 'Quit'.upper():
+        break
     print(f"You said: {user_input}")
 
 

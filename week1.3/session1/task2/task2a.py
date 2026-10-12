@@ -3,9 +3,15 @@
 k = 2
 while True:
     k = 2 * k 
+    if k > 200:
+        break
     print(k)
     
-
+k = 2
+while k < 100:  
+    k = 2 * k 
+    print(k)
+    
 # As written this is an infinite loop.
 # If you run it, use <Ctrl>C to exit the running program.
 

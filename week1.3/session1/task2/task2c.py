@@ -3,7 +3,7 @@
 # open a named text file for reading using open() function
 # the `with` statement closes the file automatically as the block of code finishes executing
 
-with open('file_data.txt', 'r') as file:  
+with open(file_data.txt, 'r') as file:  
 
     while True:
         # read by character
