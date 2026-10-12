@@ -3,14 +3,12 @@
 # open a named text file for reading using open() function
 # the `with` statement closes the file automatically as the block of code finishes executing
 
-with open(file_data.txt, 'r') as file:  
-
+with open('file_data.txt', 'r') as file:  
     while True:
         # read by character
         char = file.read(1)            # read exactly 1 character from the file      
         if not char: 
             break
-
         print(char)
 
 # This example shows a common while-break pattern - reading from a file
@@ -21,3 +19,4 @@ with open(file_data.txt, 'r') as file:
 # We use 'break' to exit the reading process at the end of the file.
 
 # Why do we use an infinite 'while True' loop for this process?
+# The break command allows for the loop to end when there are no longer any more characters to read
