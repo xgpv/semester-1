@@ -10,10 +10,23 @@
 # hint: watch out for empty lines that might give you empty strings
 
 # display the wordcount
-with open('glasses.txt', 'r') as file1:
+import sys
+wordcount = 0
+try:
+    filename = input("Enter the filename: ")
+except FileNotFoundError:
+    sys.exit("No file found.")
+
+with open(f'{filename}.txt', 'r') as file1:
     for line in file1:
-        print(line)
-  
+        line = (line.strip().split())
+        for word in line:
+           wordcount += 1
+         
+    print(f'There are {wordcount} words in file {filename}.txt.')
+    wordcount = 0
+    
+
 # Here are the word counts you should get:
 # story.txt - 290
 # story2.txt - 326
