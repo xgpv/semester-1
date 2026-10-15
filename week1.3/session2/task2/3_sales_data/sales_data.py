@@ -8,8 +8,13 @@
 #   - average sale amount
 #   - the widget which has been sold the most
 # and print these out in a nice, human-readable format
-
-
+with open('sales_data.py', 'r') as file:
+    maxsale = 0
+    for line in file:
+        if line == int:
+            if line > maxsale:
+                maxsale = line
+                print(maxsale)
 # additional: you can calculate other sales statistics such as:
 # - total sales for each region
 # - most sold widget for each region
