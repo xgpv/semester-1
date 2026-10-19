@@ -7,12 +7,15 @@
 
 def additional_rate(money):
     taxamount = (money-125140) * 0.45 + ((money-50270)-(money-125140)) * 0.4 + ((money-12570)-(money-(50270+125140))) * 0.2
-    return taxamount
+    return round(taxamount,0) #Instructions say to 1 decimal point which makes no sense as provided answers are to nearest whole number, to change between either is this line
 
 def higher_rate(money):
     taxamount = (money-50270) * 0.4 + ((money-12570)-(money-(50270))) * 0.2
-    return taxamount
+    return round(taxamount,0)#Instructions say to 1 decimal point which makes no sense as provided answers are to nearest whole number, to change between either is this line
 
+def basic_rate(money):
+    taxamount = (money-12571) * 0.2
+    return round(taxamount,0)#Instructions say to 1 decimal point which makes no sense as provided answers are to nearest whole number, to change between either is this line
 
 def income_tax_calculator(annual_income):
     """
@@ -42,13 +45,13 @@ def income_tax_calculator(annual_income):
         e.g round(tax, 1) 0.0 if annual_income is not a positive integer.
     """
     if annual_income > 125140:
-        additional_rate(annual_income)
+        return additional_rate(annual_income)
     elif annual_income > 50270:
-        higher_rate(annual_income)
+        return higher_rate(annual_income)
     elif annual_income > 12570:
-        basic_rate(annual_income)
+        return basic_rate(annual_income)
     else:
-        return annual_income
+        return float(0)
 
 
 # Check if the following lines produce the correct output

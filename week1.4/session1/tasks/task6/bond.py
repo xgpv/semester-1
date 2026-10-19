@@ -17,24 +17,33 @@ def isBond(intList):
     # Nothing happens when pass is executed.
 
     #pass # delete pass to write your code
+    count = 0
     for i in intList:
+        count += 1
         print(i)
-        if intList[i-1] == 0:
-            print(i)
-            j = i
-            for i in intList[j:]:
-                if intList[i] == 0:
-                    print(i)
-                    k = i
-                    for i in intList[k:]:
-                        if intList[i] == 7:
-                            print(i)
+        if i == 0:
+            intList = intList[count:]
+            print('First 0')
+            count = 0
+            for i in intList:
+                count += 1
+                print(i)
+                if i == 0:
+                    i = intList[i]
+                    print('Second 0')
+                    intList = intList[count:]
+                    count = 0
+                    for i in intList:
+                        count += 1
+                        print(i)
+                        if i == 7: 
+                            print('Final 7, therefore:')
                             return True
-                        else:
-                            return False
-
+    print('No 007 in this order detected in list, therefore:')
+    return False
 
 # Check if the following lines of code produce the correct output
-print(isBond([1, 2, 4, 0, 0, 7, 5]))   # True
-print(isBond([1, 0, 2, 4, 0, 5, 7]))   # True
-print(isBond([1, 7, 2, 0, 4, 5, 0]))   # False
+n = '\n'
+print(f'{isBond([1, 2, 4, 0, 0, 7, 5])}{n}')   # True
+print(f'{isBond([1, 0, 2, 4, 0, 5, 7])}{n}')   # True
+print(f'{isBond([1, 7, 2, 0, 4, 5, 0])}{n}')   # False

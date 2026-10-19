@@ -11,12 +11,13 @@ def add_two_numbers(num1, num2):
 
 
 # Check if the following lines produce the correct output
-print(add_two_numbers(3, 4))
-print(add_two_numbers(num1=3, num2=4))
-print(add_two_numbers(3, num2=4))
+print(add_two_numbers(3, 4)) # Yes
+print(add_two_numbers(num1=3, num2=4)) # Yes
+print(add_two_numbers(3, num2=4)) # Yes
 
 # Why does the next line work?
-print(add_two_numbers("3", "4"))
+print(add_two_numbers("3", "4")) # The function converts them to floats before doing the calculation
 
 # What happens if you try this? Uncomment the code to find out.
-# print(add_two_numbers("three", "four"))
+print(add_two_numbers("three", "four"))
+# This is a string of characters not a string of numbers, it cannot be converted to a float
