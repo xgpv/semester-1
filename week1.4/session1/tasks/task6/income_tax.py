@@ -5,6 +5,14 @@
 # details in the docstring. You can create additional functions
 # to be called from within income_tax_calculator
 
+def additional_rate(money):
+    taxamount = (money-125140) * 0.45 + ((money-50270)-(money-125140)) * 0.4 + ((money-12570)-(money-(50270+125140))) * 0.2
+    return taxamount
+
+def higher_rate(money):
+    taxamount = (money-50270) * 0.4 + ((money-12570)-(money-(50270))) * 0.2
+    return taxamount
+
 
 def income_tax_calculator(annual_income):
     """
@@ -33,6 +41,14 @@ def income_tax_calculator(annual_income):
         one decimal point. You can use the round() function,
         e.g round(tax, 1) 0.0 if annual_income is not a positive integer.
     """
+    if annual_income > 125140:
+        additional_rate(annual_income)
+    elif annual_income > 50270:
+        higher_rate(annual_income)
+    elif annual_income > 12570:
+        basic_rate(annual_income)
+    else:
+        return annual_income
 
 
 # Check if the following lines produce the correct output

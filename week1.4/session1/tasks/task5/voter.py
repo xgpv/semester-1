@@ -19,3 +19,5 @@ age = int(input("Enter your age: "))
 check_vote_eligibility(age)
 
 # what is the return value from check_vote_eligibility?
+# It will print either of the two strings depdending on if the number is greater than or equal to 18.
+# It allows negative inputs, so the age variable should be cleaned

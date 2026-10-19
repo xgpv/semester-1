@@ -16,7 +16,23 @@ def isBond(intList):
     # meaning you need to delete pass to write your code.
     # Nothing happens when pass is executed.
 
-    pass     # delete pass to write your code
+    #pass # delete pass to write your code
+    for i in intList:
+        print(i)
+        if intList[i-1] == 0:
+            print(i)
+            j = i
+            for i in intList[j:]:
+                if intList[i] == 0:
+                    print(i)
+                    k = i
+                    for i in intList[k:]:
+                        if intList[i] == 7:
+                            print(i)
+                            return True
+                        else:
+                            return False
+
 
 # Check if the following lines of code produce the correct output
 print(isBond([1, 2, 4, 0, 0, 7, 5]))   # True

@@ -20,7 +20,7 @@ def process_data(data):
         int: The sum of all integers in the list or None if empty.
     """
     if not data:
-        return 0
+        return None # Originally returned 0
     return sum(data)
 
 # What is output from the following line of code?
