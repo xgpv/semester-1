@@ -16,6 +16,24 @@ def most_frequent_string(votes):
         and int is the count of its occurences
         - None, None: if votes is empty.
     """
+    listofmax = []
+    total = 0
+
+    if not votes:
+        return (None, None)
+
+    for value in votes:
+        x = votes.count(value)
+        if x > total:
+            total = x
+            listofmax.clear()
+            listofmax.append(value)
+        elif x == total:
+            total = x
+            listofmax.append(value)
+    return (listofmax, x)
+
+
 
     # Your task is to complete the body of the function based on the details in the docstring.
     # Hint 1: You can complete this task with for loops or comprehensions 
@@ -23,7 +41,7 @@ def most_frequent_string(votes):
 
 
 fruit = ['date', 'apple', 'cherry', 'date', 'apple', 'apple', 'elderberry',
-         'date', 'elderberry', 'elderberry', 'date', 'banana']
+         'date', 'elderberry', 'elderberry', 'date', 'banana', 'apple' ]
 names = ['Jesy', 'Leigh-Anne', 'Perrie', 'Leigh-Anne', 'Jade',
          'Leigh-Anne', 'Perrie', 'Leigh-Anne', 'Jesy', 'Jade',
          'Leigh-Anne', 'Leigh-Anne', 'Leigh-Anne', 'Leigh-Anne',
