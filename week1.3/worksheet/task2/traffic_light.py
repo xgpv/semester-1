@@ -15,7 +15,8 @@ state = next(liststate)
 time = 0
 
 
-for systime in range(maxtime):
+
+for systime in range(maxtime+1):
     print(f"Time {systime:03} State {state}")
     time += 1
     if time >= states[state]:
