@@ -5,9 +5,15 @@ L = int(input("Length of sequence: ")) # this should be your only input
 
 # Your code for the Recaman Sequence
 # You should store the sequence in an appropriate data structure named 'sequence'
-sequence = []
-for i in L:
-  
+sequence = [0]
+for i in range(1, L):
+    print(f'term before{sequence[i-1]}, counter{i}')
+    equation = sequence[i-1] - (i)
+    if equation > 0 and equation not in sequence:
+        sequence.append(sequence[i-1] - (i))
+    else:
+        sequence.append(i + sequence[i-1])
+
   
 
 # You may wish to use further output for testing purposes while you develop your code
