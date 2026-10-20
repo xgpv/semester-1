@@ -6,7 +6,7 @@
     other than any provided template code, was written and developed by
     you independently.
 
-    Name:
+    Name: Amrit Saggu
 """
 
 def currency_converter(amount, from_currency, to_currency):
