@@ -18,6 +18,7 @@ def most_frequent_string(votes):
     """
     listofmax = []
     total = 0
+    final = ()
 
     if not votes:
         return (None, None)
@@ -27,11 +28,11 @@ def most_frequent_string(votes):
         if x > total:
             total = x
             listofmax.clear()
-            listofmax.append(value)
+            listofmax = [value]
         elif x == total:
             total = x
             listofmax.append(value)
-    return (listofmax, x)
+    return (list(dict.fromkeys(listofmax)), x)
 
 
 
