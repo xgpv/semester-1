@@ -25,3 +25,4 @@ def currency_converter(amount, from_currency, to_currency):
 # Submit only this file currency_converter.py with the completed function.
 
 # Remove any additional code you may have added during development and testing.
+print(currency_converter(-1.38, 'PHP', 'INR'))
