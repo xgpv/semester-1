@@ -2,9 +2,9 @@
 
 # Given incomplete recursive function digits_sum with a docstring,
 # your task is to complete the function based on the description
+import sys
 
-
-def digits_sum(number):
+def digits_sum(number, total = 0):
     """
     This recursive function calculates the sum of digits of a given positive
     integer. For example, sum of digits for 987 = 9 + 8 + 7 = 24.
@@ -18,10 +18,17 @@ def digits_sum(number):
         int: The sum of the digits of the input integer.
     """
     # complete your code here
-    # base case
-
+    #base case
+    if number < 10:
+        return total + number
     # recursive case
+    numstring = str(number)
+    lastdigitstr = numstring[-1]
+    total += int(lastdigitstr)
+    numstring = numstring[:-1]
+    newnumber = int(numstring)
 
+    return digits_sum(newnumber, total)
 
 # check if correct output is produced
 print(digits_sum(987))  # Output: 24
@@ -29,3 +36,13 @@ print(digits_sum(12345))  # Output: 15
 
 
 # Once completed, your next task is to write an equivalent function that uses loops.
+def loopdigits_sum(number):
+    total = 0
+    if number <= 0:
+        sys.ext('Invalid number entered')
+    stringnum = str(number)
+    for digit in stringnum:
+        total += int(digit)
+    return total
+
+#print(loopdigits_sum(123))
