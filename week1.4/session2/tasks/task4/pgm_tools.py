@@ -1,5 +1,7 @@
 
 # PGM functions that we write
+import os
+import sys
 
 def readPGM( filename ):
     ''' 
@@ -7,6 +9,8 @@ def readPGM( filename ):
     Input: filename string
     Output: tuple of PGM image data
     '''
+    if not os.path.exists(filename):
+        sys.exit('No such file exists')
 
     with open(filename,"r") as f:    # read in the file
         data = f.readlines()

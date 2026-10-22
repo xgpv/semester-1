@@ -17,7 +17,9 @@ This is a more modular way to program
 The `readPGM()` function is implemented
 - this basic implementation does no validation or error checking
 - you may want to check that the file exists
+- Done
 - you may want to include a check for a comment line
+- 
 
 Implement `writePGM()` to write a PGM image to disk
 - you can test this by writing out the same image to a new file name
