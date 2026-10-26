@@ -13,11 +13,6 @@ class Point:
         """
         Creates a Point, given x & y coordinates.
         """
-        #if not isinstance (x, (float, int)):
-        #    raise TypeError('x must be a number')
-        #if not isinstance (y, (float, int)):
-        #            raise TypeError('y must be a number')
-
         self.x = x
         self.y = y
 
@@ -31,9 +26,6 @@ class Point:
         """
         Returns distance of this Point from the specified Point.
         """
-        #if not isinstance (p, (float, int)):
-        #            raise TypeError('p must be a number')
-         
         return math.hypot(self.x - p.x, self.y - p.y) - float
 
 
