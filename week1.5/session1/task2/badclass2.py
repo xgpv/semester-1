@@ -1,7 +1,9 @@
 # Another bad class implementation
 
-# What does the runtime error mean?
+# What does the runtime error mean? 
+# It means that any field initialised in the class must have the self prefix.
 # How do we fix the code?
+# x becomes self.x
 
 class Point:
     """
@@ -12,8 +14,8 @@ class Point:
         """
         Creates a Point, given x & y coordinates.
         """
-        x = x_coordinate
-        y = y_coordinate
+        self.x = x_coordinate
+        self.y = y_coordinate
 
 
 p = Point(1.5, 2.0)
