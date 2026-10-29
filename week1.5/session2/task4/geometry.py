@@ -73,3 +73,13 @@ class Circle:
         return f"radius={self.radius}, centre={self.centre}"
 
     # Implement your __contains__() method here
+    def __contains__(self: Circle, other: Point):
+        """
+        Takes the circle's radius and the point's modulus
+        to determine whether the point is inside the circle's
+        area
+        """
+        if self.radius >= other.distance_to(self.centre):
+            return True
+        else:
+            return False
