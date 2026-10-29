@@ -21,6 +21,8 @@ class Dataset:
 
         Any existing data will be deleted.
         """
+        for i in filename:
+            
 
     def __len__(self):
         """
