@@ -41,7 +41,7 @@ class Circle:
     A circle, with a radius and centre coordinates.
     """
 
-    def __init__(self, radius, centre=Point(0.0, 0.0)):
+    def __init__(self, radius, centre = Point(0.0, 0.0)):
         """
         Creates a Circle, given values for radius & centre coordinates.
 
@@ -56,7 +56,7 @@ class Circle:
         """
         Returns the area of this Circle.
         """
-        return math.pi * self.radius * self.radius
+        return math.pi * self.radius**2
 
     def perimeter(self):
         """
