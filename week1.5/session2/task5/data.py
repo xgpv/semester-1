@@ -21,8 +21,10 @@ class Dataset:
 
         Any existing data will be deleted.
         """
-        for i in filename:
-            
+        self.data = []
+        with open(filename, "r") as file:
+            for i in file:
+                self.data.append(float(i.strip()))
 
     def __len__(self):
         """
