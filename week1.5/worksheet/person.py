@@ -24,13 +24,13 @@ class Person:
 
     # Implement methods initials() and is_birthday() here
     # (see README.md for further details)
-    def initals(self):
+    def initials(self):
         """
-        Capitalises all words and puts the capital ones into a returned string
+        Capitalises all words and puts the capital ones into a returned string.
         """
-        self.name = self.name.title
+        name = self.name.title()
         returnname = ''
-        for i in self.name:
+        for i in name:
             if i.isupper():
                 returnname += i
         return returnname
