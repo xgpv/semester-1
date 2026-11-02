@@ -21,10 +21,10 @@ class QuakeFeed:
         Creates a QuakeFeed for the given level & period.
         """
         if level not in VALID_LEVELS:
-            raise ValueError(f"invalid level: must be one of {VALID_LEVELS}")
+            raise TypeError(f"invalid level: must be one of {VALID_LEVELS}")
 
         if period not in VALID_PERIODS:
-            raise ValueError(f"invalid period: must be one of {VALID_PERIODS}")
+            raise TypeError(f"invalid period: must be one of {VALID_PERIODS}")
 
         self.level = level
         self.period = period
