@@ -157,11 +157,9 @@ class Image:
 image = Image.create(3, 3)
 image.read_pgm('week1.6/session2/images/feep.pgm')
 
-for row in range(image.height):
-    start = row * image.width
-    row_pixels = image.pixels[start:start + image.width]
-    print(" ".join(f"{value:3}" for value in row_pixels))
+print(image._write_pixels(sys.stdout))
 print('\n\n')
+
 def blur(image):
     blurimage = image.copy()
     for row in range(1, image.height - 1):
@@ -174,7 +172,6 @@ def blur(image):
     return blurimage
 blurredimage = blur(image)
 
-for row in range(blurredimage.height):
-    start = row * blurredimage.width
-    row_pixels = blurredimage.pixels[start:start + blurredimage.width]
-    print(" ".join(f"{value:3}" for value in row_pixels))
+image._write_pixels(sys.stdout)
+print()
+blurredimage._write_pixels(sys.stdout)
