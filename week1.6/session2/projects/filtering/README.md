@@ -76,3 +76,4 @@ It should be possible to run your program like this:
 
 Your program should display a helpful usage message if the user fails to
 supply two filenames on the command line.
+
