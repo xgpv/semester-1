@@ -4,7 +4,7 @@ values = [1,4,2,6,3,7]
 
 print(values)
 
-newval = []
+newval = []         
 for i in values:
     if i % 2 == 0:
         newval.append(2 * i)

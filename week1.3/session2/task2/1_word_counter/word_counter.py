@@ -12,15 +12,15 @@
 # display the wordcount
 import sys
 wordcount = 0
-try:
+try:        # Selects the file
     filename = input("Enter the filename: ")
 except FileNotFoundError:
     sys.exit("No file found.")
 
-with open(f'{filename}.txt', 'r') as file1:
+with open(f'{filename}.txt', 'r') as file1:     # Takes each line, removes white spaces at the beginning and end, then takes each word as an element in a new list
     for line in file1:
         line = (line.strip().split())
-        for word in line:
+        for word in line:  
            wordcount += 1
          
     print(f'There are {wordcount} words in file {filename}.txt.')

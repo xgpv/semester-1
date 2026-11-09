@@ -12,34 +12,12 @@ def isBond(intList):
     in the specified order.
     """
 
-    # pass is a Python keyword used as a placeholder for future code,
-    # meaning you need to delete pass to write your code.
-    # Nothing happens when pass is executed.
-
-    #pass # delete pass to write your code
-    count = 0
-    for i in intList:
-        count += 1
-        print(i)
-        if i == 0:
-            intList = intList[count:]
-            print('First 0')
-            count = 0
-            for i in intList:
-                count += 1
-                print(i)
-                if i == 0:
-                    i = intList[i]
-                    print('Second 0')
-                    intList = intList[count:]
-                    count = 0
-                    for i in intList:
-                        count += 1
-                        print(i)
-                        if i == 7: 
-                            print('Final 7, therefore:')
-                            return True
-    print('No 007 in this order detected in list, therefore:')
+    zero_count = 0
+    for num in intList:
+        if num == 0 and zero_count < 2:
+            zero_count += 1
+        elif num == 7 and zero_count == 2:
+            return True
     return False
 
 # Check if the following lines of code produce the correct output

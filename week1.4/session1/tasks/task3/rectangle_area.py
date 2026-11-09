@@ -15,7 +15,7 @@ except ValueError:
 print(f"Area is {rectangle_area(base, height)}")   # provide suitable data matching your inputs
 
 
-def integerlist(startint):
+def integerlist(startint):      # Takes a number and appends all values of it until zero. It then flips this list into increasing order
     list = []
     list.append(startint)
     while True:
@@ -31,7 +31,7 @@ except ValueError:
 
 print(f'The list to zero from the starting integer is {integerlist(startint)}')
 
-def meanaverage(list):
+def meanaverage(list):  # Takes a list and for each value in the list, adds to a total, which is then converted to a mean and returned
     total = 0
     for i in range(len(list)):
         total = total+list[i]
@@ -41,7 +41,7 @@ def meanaverage(list):
 list = []
 while True:
     try:
-        numA = input('Enter a number to add to the first set, or type "next" to continue: ')
+        numA = input('Enter a number to add to the first set, or type "next" to continue: ') # Allows user to add as many numbers to the set as they like
         if str(numA.lower()) == 'next':
             break
         list.append(int(numA))
