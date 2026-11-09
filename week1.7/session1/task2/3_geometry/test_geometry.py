@@ -2,7 +2,7 @@
 
 from geometry import Point, Circle
 import math
-import pytest
+import pytest #type: ignore
 
 def test_point_constructor():
     p = Point(5, -2)
