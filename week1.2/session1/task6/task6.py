@@ -16,7 +16,7 @@ pprint(music)
 pprint(music['Dire Straits'])
 #Experiment
 i=0
-while i < 3:
+while i < 3:                            # Iterates through the first three keys
      pprint(list(music.values())[i])
      i+=1
 print(min(music),max(music))

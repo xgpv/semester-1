@@ -13,7 +13,7 @@ cost = int(input("Amount spent: "))
 is_member = input("Are you a member? (y/n): ").lower()
 is_student = input("Are you a student? (y/n): ").lower()
 
-if is_member == 'y' and is_student == 'y':
+if is_member == 'y' and is_student == 'y': # Considers all cases for subscription
     final_cost = cost * 0.7
 elif is_member == 'y':
     final_cost = cost * 0.75

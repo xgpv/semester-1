@@ -1,7 +1,7 @@
 # Week 1.2, Session 2: Task 6
 #inputs
 import sys
-try:  
+try:    # Initial  variables
   machine_temp = int(input('What is the temperature of the machine to the nearest degree Celcius?: '))
   machine_pressure = int(input('What is the pressure of the machine to the nearest PSI?: '))
   machine_status = int(input('What is the operational status of the machine, 1/0?: '))
@@ -16,7 +16,7 @@ else:
 
 #evaluating operating conditions
 safety = True
-if machine_temp > 80:
+if machine_temp > 80:   # Selects the appropriate output for the temperature                    
   print('Machine temperature too high.')
   safety = False
 elif machine_temp >= 50:
@@ -24,7 +24,7 @@ elif machine_temp >= 50:
 else:
   print('Machine temperature is low, no action needed.')
 
-if machine_pressure > 100:
+if machine_pressure > 100:    # Selects the appropriate output for the pressure
   print('Machine pressure too high.')
   safety = False
 elif machine_pressure >= 70:
@@ -34,7 +34,7 @@ else:
 
 #Status check
 
-if machine_bool_status:
+if machine_bool_status:      # If certain conditions are true, then the machine is unsafe
   if not safety:
     print('The machine is running in unsafe conditions, shut down recommended.')
   else:

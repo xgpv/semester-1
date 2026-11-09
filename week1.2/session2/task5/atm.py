@@ -16,14 +16,14 @@ option = int(input("Enter your option (1-3): "))
 
 # Conditional block for ATM operations
 
-if option == 1:
+if option == 1:                                                         # Checks balance 
     print(f"Your current balance is: £{balance:.2f}")
-elif option == 2:
+elif option == 2:                                                       # Adds a specified value to the current balance
     deposit_amount = float(input("Enter the amount to deposit: "))
     balance += deposit_amount
     print(f"You have deposited £{deposit_amount:.2f}")
     print(f"Your new balance is £{balance:.2f}")
-elif option == 3:
+elif option == 3:                                                       # Removes a specified value only if it is less than the current balance
     withdraw_amount = float(input("Enter the amount to withdraw: "))
     # Nested conditional for withdrawal
     if withdraw_amount <= balance:
