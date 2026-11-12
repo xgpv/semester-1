@@ -38,6 +38,6 @@ class Point:
         Tests whether this Point has the same coordinates as another.
         """
         if not isinstance(other, Point):
-            return False
+            raise TypeError('Arugments must be part of the Point class')
 
         return self.x == other.x and self.y == other.y
