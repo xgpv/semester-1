@@ -2,6 +2,7 @@
 
 # What does the runtime error mean? 
 # It means that any field initialised in the class must have the self prefix.
+
 # How do we fix the code?
 # x becomes self.x
 
