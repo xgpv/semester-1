@@ -22,11 +22,11 @@ def odd_even(lstIntegers):
     odd = []
 
     for num in lstIntegers:
-        if num % 2 == 0:
+        if num % 2 == 0:   # Checks the number is even and appends to the even list, or to the odd list instead
             even.append(num)
-        else:
+        else:               
             odd.append(num)
-    return [len(odd), len(even)]
+    return [len(odd), len(even)] # Returns both lists
 
 # Check if correct output is produced
 print(odd_even([1, 2, 3, 4, 5]))  # Output: [3, 2]

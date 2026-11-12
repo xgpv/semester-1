@@ -41,7 +41,7 @@ class Shape:
 # Make sure that it inherits properly from Shape!
 class Circle(Shape):
     """
-    A subset of shapes, focusing on the Circle shap
+    A subset of shapes, focusing on the Circle shape
     """
     def __init__(self, radius = 2.5, position = (0.0, 0.0), colour = 'red'):
         """
@@ -51,7 +51,7 @@ class Circle(Shape):
         super().__init__(Point(0.0, 0.0), 'red')
         self.radius = radius
         self.position = position
-        self.colout = colour
+        self.colour = colour
     
     def set_radius(self, radius):
         """
