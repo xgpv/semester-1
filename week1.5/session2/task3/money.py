@@ -36,7 +36,7 @@ class Money:
         # Add code here to return an appropriate string representation
         # Use the currency symbol for British Pounds Sterling
         # Represent pence with a leading zero if needed (e.g. '05')
-        return (f'£{self.pounds}.{self.pence:02d}') 
+        return (f'£{self.pounds}.{self.pence:02d}')  # Must round to 2 decimal places, as this is money
 
     def __add__(self, other) -> Money:
         """
@@ -46,7 +46,7 @@ class Money:
         # Add code here to check that parameter 'other' is a Money object,
         # add self to other, then return the sum as a new Money object
         # (see README for hints and tips)
-        if not isinstance(other, Money):
+        if not isinstance(other, Money):    # Validates that arguments are the Money type 
             raise ValueError('The second sum is not a valid amount')
-        total = (self.pounds + other.pounds) * 100 + (self.pence + other.pence)
-        return Money(total//100,total%100)
+        total = (self.pounds + other.pounds) * 100 + (self.pence + other.pence) # Takes the total of both sums in pence
+        return Money(total//100,total%100)  # Since our total is in pence, modulo and int division is used to return pounds and pence in seperate variables
