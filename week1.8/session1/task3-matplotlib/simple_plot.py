@@ -1,8 +1,8 @@
 
 import matplotlib.pyplot as plt  # import library
-
+import math
 x = [ k for k in range(10) ]  # create a range for the data
-y = [ k*k for k in x ]      # create a simple function y=x^2
+y = [ math.sin(math.cos(k)) for k in x ]      # create a simple function y=x^2
 
 plt.plot(x,y)  # create a 2d plot
 
