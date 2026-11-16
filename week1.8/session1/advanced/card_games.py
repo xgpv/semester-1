@@ -19,7 +19,7 @@
 
 import random
 import sys
-
+import time
 
 class Card:
     """
@@ -69,6 +69,7 @@ class Deck:
     
     def handview(self, hand, handd):
         print(f"Your hand: {', '.join(str(card) for card in hand)}\nValue: {deck.rankvalues(hand)}\nDealer's hand: {', '.join(str(card) for card in handd)}\nValue: {deck.rankvalues(handd)}\n")
+        time.sleep(1)
 
     def rankvalues(self, hand):
         """Takes the rank of a hand and returns its value"""
@@ -78,26 +79,84 @@ class Deck:
         rankvalues['King'] = 10
         rankvalues['Ace'] = 11
         total = 0
+        aces = 0
         for card in hand:
             total += int(rankvalues[card.rank])
+            if card.rank == 'Ace':
+                aces += 1
+        while total > 21 and aces > 0:
+            total -= 10
+            aces -=1 
+        
+
         return total
     
-    def choice(self, hand, choice):
+    def choice(self, hand, dealerhand, choice):
         """Details the choices the user has"""
         if choice == 's':
             hand.stand()
         elif choice == 'h':
             yourhand.append(Deck.deal(deck))
             deck.handview(yourhand, dealerhand)
-            hand.check()
+            time.sleep(1)
+            hand.check(hand, dealerhand)
         else:
             print('Error')
         return choice
     
-    def hit(self, hand):
-        yourhand.append(Deck.deal(deck))
+    def check(self, hand, handd):
+        if d > 21:
+            sys.exit('Bust. You lost.')
 
-        
+        print("Dealer's turn")
+        dd = handd.rankvalues()
+        d = hand.rankvalues()
+
+        while handd.rankvalues() > 16:
+            print('Dealer hits')
+            handd.append(Deck.deal(deck))
+            hand.handview(yourhand, dealerhand)
+            time.sleep(1)
+        else:
+            print('Dealer stands')
+
+        time.sleep(3)
+
+        if d == 21 and dd == 21:
+            sys.exit('You both made 21. You tied.')
+        elif d == 21:
+            sys.exit('You made 21. You win.')
+        elif dd == 21:
+            sys.exit('Dealer made 21. You lost.')
+        elif d > 21 and dd > 21:
+            print('Both bust.')
+            if dd > d:
+                sys.exit('You are closer to 21. You win.')
+            elif dd < d:
+                sys.exit('Dealer is closer to 21. You lose.')
+            elif dd == d:
+                sys.exit('Same score. You tied.')
+        elif d > 21 and dd < 21:
+            sys.exit('Bust. You lost.')
+        elif d < 21 and dd > 22:
+            sys.exit('Dealer bust. You win.')
+        elif d == dd:
+            sys.exit('Same score. You tied.')
+        elif d < 21 and dd < 21:   
+            if dd > d:
+                sys.exit('Dealer is closer to 21. You lost.')
+            elif dd < d:
+                sys.exit('You are closer to 21. You win.')
+            elif dd == d:
+                sys.exit('Same score. You tied.')
+
+    def acecheck(self, hand, handd): 
+        dd = handd.rankvalues()
+        d = hand.rankvalues()
+        if (d-10) >= 21:
+            hand
+
+
 
     def __len__(self):
         return len(self.deck)
@@ -108,6 +167,7 @@ class Deck:
 
 # Implement a card game!
 print("Let's play Blackjack!|\n")
+time.sleep(1)
 deck = Deck()   # Initialises the variables to start the game
 Deck.shuffle(deck)
 yourhand = []
@@ -120,10 +180,10 @@ for i in range(2):   # Deals two cards to dealer and player
 deck.handview(yourhand, dealerhand) 
 cond = True
 while cond:
-    choice = input('Next move?\nHit - Type: h\nStand - Type: s\n').strip().lower()
+    choice = input('Your move.\nHit - Type: h\nStand - Type: s\n').strip().lower()
     if choice not in {'h', 's'}:
         print('Enter a valid choice\n')
     else:
         cond = False
-choice = deck.choice(yourhand, choice)
-#while choice != 's':
+choice = deck.choice(yourhand, dealerhand, choice)
+
