@@ -94,29 +94,31 @@ class Deck:
     def choice(self, hand, dealerhand, choice):
         """Details the choices the user has"""
         if choice == 's':
-            hand.stand()
+            self.check(hand, dealerhand)
         elif choice == 'h':
-            yourhand.append(Deck.deal(deck))
-            deck.handview(yourhand, dealerhand)
+            hand.append(self.deal())
+            self.handview(hand, dealerhand)
             time.sleep(1)
-            hand.check(hand, dealerhand)
+            if self.rankvalues(hand) > 21:
+                sys.exit('Bust. You lost.')
         else:
             print('Error')
         return choice
     
     def check(self, hand, handd):
+        d = self.rankvalues(hand)
         if d > 21:
             sys.exit('Bust. You lost.')
 
         print("Dealer's turn")
-        dd = handd.rankvalues()
-        d = hand.rankvalues()
+        dd = self.rankvalues(handd)
 
-        while handd.rankvalues() > 16:
+        while dd < 17:
             print('Dealer hits')
-            handd.append(Deck.deal(deck))
-            hand.handview(yourhand, dealerhand)
+            handd.append(self.deal())
+            self.handview(hand, handd)
             time.sleep(1)
+            dd = self.rankvalues(handd)
         else:
             print('Dealer stands')
 
@@ -138,7 +140,7 @@ class Deck:
                 sys.exit('Same score. You tied.')
         elif d > 21 and dd < 21:
             sys.exit('Bust. You lost.')
-        elif d < 21 and dd > 22:
+        elif d < 21 and dd > 21:
             sys.exit('Dealer bust. You win.')
         elif d == dd:
             sys.exit('Same score. You tied.')
@@ -184,6 +186,7 @@ while cond:
     if choice not in {'h', 's'}:
         print('Enter a valid choice\n')
     else:
-        cond = False
-choice = deck.choice(yourhand, dealerhand, choice)
+        choice = deck.choice(yourhand, dealerhand, choice)
+        if choice == 's':
+            cond = False
 
