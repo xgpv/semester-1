@@ -18,6 +18,7 @@
 
 
 import random
+import sys
 
 
 class Card:
@@ -57,10 +58,46 @@ class Deck:
     def shuffle(self):
         """Shuffles this deck randomly."""
         # NEEDS COMPLETING
+        return random.shuffle(self.deck)
 
     def deal(self):
         """Removes top card from this deck and returns it."""
         # NEEDS COMPLETING
+        card = self.deck[0]
+        self.deck.pop(0)
+        return card
+    
+    def handview(self, hand, handd):
+        print(f"Your hand: {', '.join(str(card) for card in hand)}\nValue: {deck.rankvalues(hand)}\nDealer's hand: {', '.join(str(card) for card in handd)}\nValue: {deck.rankvalues(handd)}\n")
+
+    def rankvalues(self, hand):
+        """Takes the rank of a hand and returns its value"""
+        rankvalues = {rank: value for value,rank in enumerate(Deck.RANKS, start=2)}
+        rankvalues['Jack'] = 10
+        rankvalues['Queen'] = 10
+        rankvalues['King'] = 10
+        rankvalues['Ace'] = 11
+        total = 0
+        for card in hand:
+            total += int(rankvalues[card.rank])
+        return total
+    
+    def choice(self, hand, choice):
+        """Details the choices the user has"""
+        if choice == 's':
+            hand.stand()
+        elif choice == 'h':
+            yourhand.append(Deck.deal(deck))
+            deck.handview(yourhand, dealerhand)
+            hand.check()
+        else:
+            print('Error')
+        return choice
+    
+    def hit(self, hand):
+        yourhand.append(Deck.deal(deck))
+
+        
 
     def __len__(self):
         return len(self.deck)
@@ -70,3 +107,23 @@ class Deck:
 
 
 # Implement a card game!
+print("Let's play Blackjack!|\n")
+deck = Deck()   # Initialises the variables to start the game
+Deck.shuffle(deck)
+yourhand = []
+dealerhand = []
+for i in range(2):   # Deals two cards to dealer and player
+    yourhand.append(Deck.deal(deck))
+    dealerhand.append(Deck.deal(deck))
+
+
+deck.handview(yourhand, dealerhand) 
+cond = True
+while cond:
+    choice = input('Next move?\nHit - Type: h\nStand - Type: s\n').strip().lower()
+    if choice not in {'h', 's'}:
+        print('Enter a valid choice\n')
+    else:
+        cond = False
+choice = deck.choice(yourhand, choice)
+#while choice != 's':
