@@ -11,7 +11,7 @@ See slide on `Installing httpx CLI`
 
 ## Instal httpx
 
-`pip install 'httpx[cli]'`
+accidently downloaded a module wihout ebing in a virtual environment, how do i undo this
 
 ## Command-line use
 

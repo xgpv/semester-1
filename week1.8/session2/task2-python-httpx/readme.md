@@ -21,6 +21,7 @@ The `httpx.get(url)` method returns a `response` object that we can interrogate
 # Compare to command-line httpx
 
 What is the difference?
+#When doing command-line, it prints the whole length. When doing in-editor, it only returns a condensed <> with only the status code.
 
 # Extension
 
